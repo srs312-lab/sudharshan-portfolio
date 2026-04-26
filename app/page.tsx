@@ -5,8 +5,13 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-function Icon({ name, className = "h-6 w-6" }) {
-  const commonProps = {
+type IconProps = {
+  name: string;
+  className?: string;
+};
+
+function Icon({ name, className = "h-6 w-6" }: IconProps) {
+  const commonProps: React.SVGProps<SVGSVGElement> = {
     className,
     viewBox: "0 0 24 24",
     fill: "none",
@@ -14,10 +19,10 @@ function Icon({ name, className = "h-6 w-6" }) {
     strokeWidth: 2,
     strokeLinecap: "round",
     strokeLinejoin: "round",
-    "aria-hidden": "true",
+    "aria-hidden": true,
   };
 
-  const icons = {
+  const icons: Record<string, React.ReactElement> = {
     arrow: (
       <svg {...commonProps}>
         <path d="M7 17 17 7" />
@@ -92,10 +97,35 @@ function Icon({ name, className = "h-6 w-6" }) {
     ),
   };
 
-  return icons[name] || icons.sparkle;
+  return icons[name] ?? icons.sparkle;
 }
 
-const impactMetrics = [
+type ImpactMetric = {
+  value: string;
+  label: string;
+};
+
+type Project = {
+  title: string;
+  category: string;
+  summary: string;
+  impact: string;
+  skills: string[];
+  icon: string;
+};
+
+type SkillGroup = {
+  title: string;
+  skills: string[];
+};
+
+type SectionHeadingProps = {
+  eyebrow: string;
+  title: string;
+  description?: string;
+};
+
+const impactMetrics: ImpactMetric[] = [
   {
     value: "2 weeks → 4 days",
     label: "Contract turnaround reduced through AI-powered CLM transformation",
@@ -122,7 +152,7 @@ const impactMetrics = [
   },
 ];
 
-const projects = [
+const projects: Project[] = [
   {
     title: "AI-Powered CLM Transformation",
     category: "AI + Enterprise Systems",
@@ -179,26 +209,14 @@ const projects = [
   },
 ];
 
-const skillGroups = [
+const skillGroups: SkillGroup[] = [
   {
     title: "Program Leadership",
-    skills: [
-      "Technical Program Management",
-      "Agile Delivery",
-      "Roadmaps",
-      "Risk Management",
-      "Executive Updates",
-    ],
+    skills: ["Technical Program Management", "Agile Delivery", "Roadmaps", "Risk Management", "Executive Updates"],
   },
   {
     title: "AI & Automation",
-    skills: [
-      "AI Agentification",
-      "UiPath",
-      "Power Automate",
-      "Workflow Automation",
-      "Process Mining",
-    ],
+    skills: ["AI Agentification", "UiPath", "Power Automate", "Workflow Automation", "Process Mining"],
   },
   {
     title: "Enterprise Systems",
@@ -211,7 +229,7 @@ const skillGroups = [
 ];
 
 function validatePortfolioData() {
-  const requiredProjectFields = ["title", "category", "summary", "impact", "skills", "icon"];
+  const requiredProjectFields: Array<keyof Project> = ["title", "category", "summary", "impact", "skills", "icon"];
 
   console.assert(impactMetrics.length >= 4, "Expected at least 4 impact metrics.");
   console.assert(projects.length >= 4, "Expected at least 4 featured projects.");
@@ -219,7 +237,7 @@ function validatePortfolioData() {
 
   projects.forEach((project) => {
     requiredProjectFields.forEach((field) => {
-      console.assert(Boolean(project[field]), `Project is missing required field: ${field}`);
+      console.assert(Boolean(project[field]), `Project is missing required field: ${String(field)}`);
     });
     console.assert(Array.isArray(project.skills), `${project.title} skills should be an array.`);
     console.assert(project.skills.length > 0, `${project.title} should include at least one skill.`);
@@ -228,20 +246,12 @@ function validatePortfolioData() {
 
 validatePortfolioData();
 
-function SectionHeading({ eyebrow, title, description }) {
+function SectionHeading({ eyebrow, title, description }: SectionHeadingProps) {
   return (
     <div className="mx-auto mb-10 max-w-3xl text-center">
-      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
-        {eyebrow}
-      </p>
-      <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-        {title}
-      </h2>
-      {description && (
-        <p className="mt-4 text-base leading-7 text-slate-600 md:text-lg">
-          {description}
-        </p>
-      )}
+      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">{eyebrow}</p>
+      <h2 className="text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">{title}</h2>
+      {description ? <p className="mt-4 text-base leading-7 text-slate-600 md:text-lg">{description}</p> : null}
     </div>
   );
 }
@@ -255,21 +265,13 @@ export default function SudharshanPortfolio() {
             Sudharshan Soma
           </a>
           <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
-            <a href="#impact" className="hover:text-slate-950">
-              Impact
-            </a>
-            <a href="#projects" className="hover:text-slate-950">
-              Projects
-            </a>
-            <a href="#skills" className="hover:text-slate-950">
-              Skills
-            </a>
-            <a href="#contact" className="hover:text-slate-950">
-              Contact
-            </a>
+            <a href="#impact" className="hover:text-slate-950">Impact</a>
+            <a href="#projects" className="hover:text-slate-950">Projects</a>
+            <a href="#skills" className="hover:text-slate-950">Skills</a>
+            <a href="#contact" className="hover:text-slate-950">Contact</a>
           </div>
           <Button className="rounded-full" asChild>
-            <a href="mailto:soma.sudharshan.reddy@gmail.com">
+            <a href="mailto:srs312@georgetown.edu.com">
               Contact
               <Icon name="mail" className="ml-2 h-4 w-4" />
             </a>
@@ -366,9 +368,7 @@ export default function SudharshanPortfolio() {
                 >
                   <Card className="h-full rounded-3xl border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                     <CardContent className="p-6">
-                      <p className="text-3xl font-semibold tracking-tight text-slate-950">
-                        {metric.value}
-                      </p>
+                      <p className="text-3xl font-semibold tracking-tight text-slate-950">{metric.value}</p>
                       <p className="mt-3 leading-6 text-slate-600">{metric.label}</p>
                     </CardContent>
                   </Card>
@@ -404,14 +404,10 @@ export default function SudharshanPortfolio() {
                           {project.category}
                         </span>
                       </div>
-                      <h3 className="text-2xl font-semibold tracking-tight text-slate-950">
-                        {project.title}
-                      </h3>
+                      <h3 className="text-2xl font-semibold tracking-tight text-slate-950">{project.title}</h3>
                       <p className="mt-4 leading-7 text-slate-600">{project.summary}</p>
                       <div className="mt-5 rounded-2xl bg-white p-4 shadow-sm">
-                        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-                          Impact
-                        </p>
+                        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Impact</p>
                         <p className="mt-2 font-semibold text-slate-950">{project.impact}</p>
                       </div>
                       <div className="mt-5 flex flex-wrap gap-2">
@@ -446,10 +442,7 @@ export default function SudharshanPortfolio() {
                     <h3 className="text-lg font-semibold">{group.title}</h3>
                     <div className="mt-5 flex flex-wrap gap-2">
                       {group.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700"
-                        >
+                        <span key={skill} className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">
                           {skill}
                         </span>
                       ))}
@@ -463,9 +456,7 @@ export default function SudharshanPortfolio() {
 
         <section id="contact" className="bg-slate-950 px-6 py-20 text-white">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">
-              Contact
-            </p>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">Contact</p>
             <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">
               Let’s connect around AI transformation, automation, and enterprise program leadership.
             </h2>
@@ -474,7 +465,7 @@ export default function SudharshanPortfolio() {
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Button size="lg" variant="secondary" className="rounded-full" asChild>
-                <a href="mailto:soma.sudharshan.reddy@gmail.com">
+                <a href="mailto:srs312@georgetown.edu.com">
                   Email me
                   <Icon name="mail" className="ml-2 h-4 w-4" />
                 </a>
@@ -485,7 +476,7 @@ export default function SudharshanPortfolio() {
                 className="rounded-full border-white/30 bg-transparent text-white hover:bg-white hover:text-slate-950"
                 asChild
               >
-                <a href="https://www.linkedin.com/in/sudarshan-soma/" target="_blank" rel="noreferrer">
+                <a href="https://linkedin.com/in/Sudharshan_soma" target="_blank" rel="noreferrer">
                   LinkedIn
                   <Icon name="linkedin" className="ml-2 h-4 w-4" />
                 </a>
