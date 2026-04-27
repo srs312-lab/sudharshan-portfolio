@@ -268,10 +268,13 @@ export default function SudharshanPortfolio() {
             <a href="#impact" className="hover:text-slate-950">Impact</a>
             <a href="#projects" className="hover:text-slate-950">Projects</a>
             <a href="#skills" className="hover:text-slate-950">Skills</a>
+            <a href="/Sudharshan_Soma.pdf" target="_blank" rel="noreferrer" className="hover:text-slate-950">
+              Resume
+            </a>
             <a href="#contact" className="hover:text-slate-950">Contact</a>
           </div>
           <Button className="rounded-full" asChild>
-            <a href="mailto:srs312@georgetown.edu.com">
+            <a href="mailto:soma.sudharshan.reddy@gmail.com">
               Contact
               <Icon name="mail" className="ml-2 h-4 w-4" />
             </a>
@@ -304,6 +307,13 @@ export default function SudharshanPortfolio() {
                     <Icon name="arrow" className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
+
+                <Button size="lg" variant="outline" className="rounded-full" asChild>
+                  <a href="/Sudharshan_Soma.pdf" target="_blank" rel="noreferrer">
+                    Download Resume
+                  </a>
+                </Button>
+
                 <Button size="lg" variant="outline" className="rounded-full" asChild>
                   <a href="#impact">See impact metrics</a>
                 </Button>
@@ -465,7 +475,7 @@ export default function SudharshanPortfolio() {
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Button size="lg" variant="secondary" className="rounded-full" asChild>
-                <a href="mailto:srs312@georgetown.edu.com">
+                <a href="mailto:soma.sudharshan.reddy@gmail.com">
                   Email me
                   <Icon name="mail" className="ml-2 h-4 w-4" />
                 </a>
@@ -476,7 +486,7 @@ export default function SudharshanPortfolio() {
                 className="rounded-full border-white/30 bg-transparent text-white hover:bg-white hover:text-slate-950"
                 asChild
               >
-                <a href="https://linkedin.com/in/Sudharshan_soma" target="_blank" rel="noreferrer">
+                <a href="https://www.linkedin.com/in/sudarshan-soma/" target="_blank" rel="noreferrer">
                   LinkedIn
                   <Icon name="linkedin" className="ml-2 h-4 w-4" />
                 </a>
