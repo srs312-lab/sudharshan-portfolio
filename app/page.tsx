@@ -169,7 +169,7 @@ const projects: Project[] = [
     category: "Program Recovery",
     summary:
       "Stabilized a business-critical Anaplan planning platform through governance, backlog recovery, sprint execution, and performance optimization.",
-    impact: "Resolved 250+ backlog issues, improved NPS from -30 to +7, and delivered 4 strategic initiatives.",
+    impact: "Resolved 250+ backlog issues, improved NPS from -30 to +7 in six months, and delivered 4 strategic initiatives.",
     skills: ["Program Recovery", "Anaplan", "Governance", "Supply Chain Planning"],
     icon: "gauge",
     href: "/projects/anaplan-recovery",
