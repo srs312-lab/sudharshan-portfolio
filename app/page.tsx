@@ -112,6 +112,7 @@ type Project = {
   impact: string;
   skills: string[];
   icon: string;
+  href?: string;
 };
 
 type SkillGroup = {
@@ -127,8 +128,8 @@ type SectionHeadingProps = {
 
 const impactMetrics: ImpactMetric[] = [
   {
-    value: "2 weeks → 4 days",
-    label: "Contract turnaround reduced through AI-powered CLM transformation",
+    value: "8 weeks → 1-2 weeks",
+    label: "Contract turnaround reduced through global AI-powered CLM transformation",
   },
   {
     value: "-30 → +7",
@@ -154,13 +155,14 @@ const impactMetrics: ImpactMetric[] = [
 
 const projects: Project[] = [
   {
-    title: "AI-Powered CLM Transformation",
+    title: "AI-Powered Global CLM Transformation",
     category: "AI + Enterprise Systems",
     summary:
-      "Replaced a legacy contract lifecycle management process with an AI-powered platform using redlining, playbooks, and workflow-based decision-making.",
-    impact: "Reduced contract turnaround from 2 weeks to 4 days.",
-    skills: ["TPM", "CLM", "AI Workflows", "Stakeholder Alignment"],
+      "Led migration from a legacy CLM platform to an AI-enabled enterprise solution across sales, sourcing, legal, procurement, and treasury teams.",
+    impact: "Reduced contract turnaround from 8 weeks to 1-2 weeks while migrating 1,500+ contracts.",
+    skills: ["TPM", "CLM", "Vendor Evaluation", "Change Management"],
     icon: "sparkle",
+    href: "/projects/clm-transformation",
   },
   {
     title: "Anaplan Recovery Program",
@@ -430,6 +432,14 @@ export default function SudharshanPortfolio() {
                           </span>
                         ))}
                       </div>
+                      {project.href ? (
+                        <Button className="mt-6 rounded-full" asChild>
+                          <a href={project.href}>
+                            Read case study
+                            <Icon name="arrow" className="ml-2 h-4 w-4" />
+                          </a>
+                        </Button>
+                      ) : null}
                     </CardContent>
                   </Card>
                 </motion.div>
