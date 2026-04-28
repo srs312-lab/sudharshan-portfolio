@@ -168,10 +168,11 @@ const projects: Project[] = [
     title: "Anaplan Recovery Program",
     category: "Program Recovery",
     summary:
-      "Rescued a failing planning system by structuring backlog cleanup, prioritizing delivery, and launching major enhancement programs.",
-    impact: "Resolved 250+ backlog issues and improved NPS from -30 to +7.",
-    skills: ["Program Recovery", "Backlog Management", "Enterprise Systems"],
+      "Stabilized a business-critical Anaplan planning platform through governance, backlog recovery, sprint execution, and performance optimization.",
+    impact: "Resolved 250+ backlog issues, improved NPS from -30 to +7, and delivered 4 strategic initiatives.",
+    skills: ["Program Recovery", "Anaplan", "Governance", "Supply Chain Planning"],
     icon: "gauge",
+    href: "/projects/anaplan-recovery",
   },
   {
     title: "Procure-to-Pay Transformation",
