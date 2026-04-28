@@ -128,6 +128,10 @@ type SectionHeadingProps = {
 
 const impactMetrics: ImpactMetric[] = [
   {
+    value: "$6M-$8M",
+    label: "Estimated savings opportunity from ProCo UAE procurement entity transformation",
+  },
+  {
     value: "8 weeks → 1-2 weeks",
     label: "Contract turnaround reduced through global AI-powered CLM transformation",
   },
@@ -154,6 +158,16 @@ const impactMetrics: ImpactMetric[] = [
 ];
 
 const projects: Project[] = [
+  {
+    title: "ProCo Tax Transformation",
+    category: "Enterprise Tax Automation",
+    summary:
+      "Led a deadline-sensitive tax transformation to establish a UAE procurement entity and redesign intercompany flows across multiple enterprise platforms.",
+    impact: "Positioned the organization to capture an estimated $6M-$8M in savings through a phased April 1 rollout.",
+    skills: ["TPM", "Tax Transformation", "Intercompany Flows", "Executive Alignment"],
+    icon: "briefcase",
+    href: "/projects/proco-tax-transformation",
+  },
   {
     title: "AI-Powered Global CLM Transformation",
     category: "AI + Enterprise Systems",
