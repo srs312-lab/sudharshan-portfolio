@@ -245,6 +245,21 @@ const skillGroups: SkillGroup[] = [
   },
 ];
 
+const heroHighlights = [
+  {
+    value: "9+ years",
+    label: "Technical program leadership",
+  },
+  {
+    value: "$6M-$8M",
+    label: "Enterprise savings opportunity",
+  },
+  {
+    value: "250+",
+    label: "Backlog issues resolved",
+  },
+];
+
 function validatePortfolioData() {
   const requiredProjectFields: Array<keyof Project> = ["title", "category", "summary", "impact", "skills", "icon"];
 
@@ -274,14 +289,50 @@ function SectionHeading({ eyebrow, title, description }: SectionHeadingProps) {
 }
 
 export default function SudharshanPortfolio() {
+  const [isScrolled, setIsScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 24);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-950">
-      <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#home" className="text-sm font-bold tracking-tight">
-            Sudharshan Soma
+      <header
+        className={`sticky top-0 z-50 border-b backdrop-blur-xl transition-all duration-300 ${
+          isScrolled ? "border-slate-200/80 bg-white/90 shadow-sm" : "border-transparent bg-white/70"
+        }`}
+      >
+        <nav
+          className={`mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 transition-all duration-300 ${
+            isScrolled ? "py-4" : "py-5 md:py-6"
+          }`}
+        >
+          <a href="#home" className="min-w-0 tracking-tight">
+            <span
+              className={`block whitespace-nowrap font-semibold transition-all duration-300 ${
+                isScrolled ? "text-sm sm:text-base" : "text-lg sm:text-2xl lg:text-3xl"
+              }`}
+            >
+              Sudharshan Soma
+            </span>
+            <span
+              className={`hidden overflow-hidden text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-slate-500 transition-all duration-300 sm:block ${
+                isScrolled ? "max-h-0 opacity-0" : "mt-1 max-h-5 opacity-100"
+              }`}
+            >
+              Portfolio
+            </span>
           </a>
-          <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
+          <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 lg:flex">
             <a href="#impact" className="hover:text-slate-950">Impact</a>
             <a href="#projects" className="hover:text-slate-950">Projects</a>
             <a href="#skills" className="hover:text-slate-950">Skills</a>
@@ -300,8 +351,16 @@ export default function SudharshanPortfolio() {
       </header>
 
       <main>
-        <section id="home" className="relative overflow-hidden px-6 py-24 md:py-32">
+        <section id="home" className="relative overflow-hidden px-6 pb-20 pt-8 md:pb-28 md:pt-12">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(15,23,42,0.12),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(71,85,105,0.14),_transparent_30%)]" />
+          <div className="mx-auto mb-10 grid max-w-7xl gap-3 rounded-lg border border-slate-200 bg-white/80 p-3 shadow-sm backdrop-blur md:grid-cols-3">
+            {heroHighlights.map((highlight) => (
+              <div key={highlight.value} className="rounded-lg bg-slate-50 px-4 py-3">
+                <p className="text-lg font-semibold tracking-tight text-slate-950">{highlight.value}</p>
+                <p className="mt-1 text-sm leading-5 text-slate-600">{highlight.label}</p>
+              </div>
+            ))}
+          </div>
           <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
