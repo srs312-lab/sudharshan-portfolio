@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -113,6 +114,14 @@ type Project = {
   skills: string[];
   icon: string;
   href?: string;
+  image?: {
+    alt: string;
+    src: string;
+  };
+  links?: {
+    href: string;
+    label: string;
+  }[];
 };
 
 type SkillGroup = {
@@ -158,6 +167,31 @@ const impactMetrics: ImpactMetric[] = [
 ];
 
 const projects: Project[] = [
+  {
+    title: "ParkReserve AI",
+    category: "AI Agent Product",
+    summary:
+      "Built a full-stack national park reservation monitor that searches Recreation.gov campgrounds, schedules watches, and sends email/SMS alerts when openings appear.",
+    impact:
+      "Deployed a protected production dashboard, public demo, Railway backend, Vercel proxy, Postgres persistence, and Resend/Twilio notifications.",
+    skills: ["Next.js", "FastAPI", "PostgreSQL", "Agents", "Recreation.gov"],
+    icon: "rocket",
+    href: "/projects/parkreserve-ai",
+    image: {
+      alt: "ParkReserve AI public demo dashboard",
+      src: "/projects/parkreserve-ai-demo.png",
+    },
+    links: [
+      {
+        href: "https://parkreserve-ai-dashboard.vercel.app/demo",
+        label: "Live demo",
+      },
+      {
+        href: "https://github.com/srs312-lab/parkreserve-ai",
+        label: "GitHub",
+      },
+    ],
+  },
   {
     title: "ProCo Tax Transformation",
     category: "Enterprise Tax Automation",
@@ -491,6 +525,17 @@ export default function SudharshanPortfolio() {
                         </span>
                       </div>
                       <h3 className="text-2xl font-semibold tracking-tight text-slate-950">{project.title}</h3>
+                      {project.image ? (
+                        <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                          <Image
+                            alt={project.image.alt}
+                            className="h-auto w-full object-cover"
+                            height={620}
+                            src={project.image.src}
+                            width={900}
+                          />
+                        </div>
+                      ) : null}
                       <p className="mt-4 leading-7 text-slate-600">{project.summary}</p>
                       <div className="mt-5 rounded-2xl bg-white p-4 shadow-sm">
                         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Impact</p>
@@ -506,14 +551,23 @@ export default function SudharshanPortfolio() {
                           </span>
                         ))}
                       </div>
-                      {project.href ? (
-                        <Button className="mt-6 rounded-full" asChild>
-                          <a href={project.href}>
-                            Read case study
-                            <Icon name="arrow" className="ml-2 h-4 w-4" />
-                          </a>
-                        </Button>
-                      ) : null}
+                      <div className="mt-6 flex flex-wrap gap-3">
+                        {project.href ? (
+                          <Button className="rounded-full" asChild>
+                            <a href={project.href}>
+                              Read case study
+                              <Icon name="arrow" className="ml-2 h-4 w-4" />
+                            </a>
+                          </Button>
+                        ) : null}
+                        {project.links?.map((link) => (
+                          <Button key={link.href} variant="outline" className="rounded-full" asChild>
+                            <a href={link.href} target="_blank" rel="noreferrer">
+                              {link.label}
+                            </a>
+                          </Button>
+                        ))}
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
