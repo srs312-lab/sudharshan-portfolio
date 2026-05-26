@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const headlineMetrics = [
   {
     value: "250+",
-    label: "Backlog issues resolved",
+    label: "Delivery blockers resolved",
     tone: "border-sky-200 bg-sky-50 text-sky-700",
   },
   {
@@ -388,7 +388,7 @@ export default function AnaplanRecoveryCaseStudy() {
                 </p>
               </div>
               <div className="rounded-lg border border-slate-200 bg-slate-950 p-6 text-white">
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">TPM Response</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">Program Lead Response</p>
                 <p className="mt-4 leading-7 text-slate-100">
                   Led cross-functional discussions, clarified trade-offs, and kept teams focused on root-cause
                   resolution.

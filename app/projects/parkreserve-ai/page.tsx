@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "ParkReserve AI | Sudharshan Soma",
   description:
-    "Case study on building a full-stack national park reservation monitoring agent with Next.js, FastAPI, Postgres, Recreation.gov, Resend, and Twilio.",
+    "Case study on building a full-stack national park reservation monitoring product with Next.js, FastAPI, Postgres, Recreation.gov, Resend, and Twilio.",
 };
 
 const headlineMetrics = [
@@ -68,7 +68,7 @@ const highlights = [
   ["Flexible stay matching", "Minimum nights allows users to get alerts for shorter openings inside a wider date range."],
   ["Priority polling", "High, normal, and low priorities balance speed against rate-conscious monitoring."],
   ["Deduped alerts", "Repeated campsite/date openings are suppressed so users are not spammed by the same result."],
-  ["Delivery health", "Email and SMS outcomes are stored, summarized, filtered, and retryable from the dashboard."],
+  ["Delivery health", "Email and text-message outcomes are stored, summarized, filtered, and retryable from the dashboard."],
   ["Production security", "The public demo is isolated, the dashboard is password protected, and backend routes require a shared token."],
 ];
 
@@ -122,15 +122,15 @@ export default function ParkReserveAICaseStudy() {
           <div>
             <SectionLabel>Case Study</SectionLabel>
             <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">
-              ParkReserve AI: Autonomous National Park Reservation Monitor
+              ParkReserve AI: National Park Reservation Monitor
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
               Built a full-stack reservation monitoring product that searches Recreation.gov campground inventory,
-              schedules recurring watches, detects matching openings, and sends email/SMS alerts through an
-              agent-oriented FastAPI backend.
+              schedules recurring watches, detects matching openings, and sends email or text-message alerts through an
+              agentic FastAPI backend.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              {["AI Agent Product", "Next.js", "FastAPI", "Postgres", "Travel Automation"].map((item) => (
+              {["Agentic AI Product", "Next.js", "FastAPI", "Postgres", "Travel Automation"].map((item) => (
                 <span key={item} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700">
                   {item}
                 </span>
@@ -192,8 +192,9 @@ export default function ParkReserveAICaseStudy() {
             <h3 className="mt-5 text-2xl font-semibold">Solution</h3>
             <p className="mt-4 leading-8 text-slate-700">
               ParkReserve AI converts a user preference into scheduled watches. The system polls Recreation.gov,
-              filters matching openings, deduplicates repeated results, and notifies the user through email, SMS, or
-              both. The dashboard exposes watch operations, alert history, delivery health, and watch analytics.
+              filters matching openings, deduplicates repeated results, and notifies the user through email,
+              text message, or both. The dashboard exposes watch operations, alert history, delivery health, and watch
+              analytics.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {stack.map((item) => (

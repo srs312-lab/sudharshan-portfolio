@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "AI-Powered Global CLM Transformation | Sudharshan Soma",
+  title: "AI-Powered Global Contract Management Transformation | Sudharshan Soma",
   description:
     "Case study on a global AI-enabled Contract Lifecycle Management migration across sales, sourcing, legal, procurement, and treasury teams.",
 };
@@ -55,7 +55,7 @@ const evaluationCriteria = [
   ["Support model", "Long-term operating cost and vendor partnership", "w-[86%]"],
 ];
 
-const platformOptions = ["Malbek", "Ironclad", "DocuSign CLM", "Agiloft"];
+const platformOptions = ["Malbek", "Ironclad", "DocuSign Contract Lifecycle Management", "Agiloft"];
 
 const alignmentMoves = [
   "Included sourcing stakeholders early in evaluation decisions",
@@ -67,7 +67,7 @@ const alignmentMoves = [
 const deliveryFlow = [
   {
     title: "Evaluate",
-    body: "Compared 4 CLM platforms with a weighted scoring matrix across usability, scalability, AI, integrations, and support.",
+    body: "Compared 4 Contract Lifecycle Management platforms with a weighted scoring matrix across usability, scalability, AI, integrations, and support.",
   },
   {
     title: "Validate",
@@ -146,14 +146,14 @@ export default function ClmTransformationCaseStudy() {
           <div>
             <SectionLabel>Case Study</SectionLabel>
             <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">
-              AI-Powered Global CLM Transformation Program
+              AI-Powered Global Contract Lifecycle Management Transformation Program
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
               Led a global migration from a legacy Contract Lifecycle Management platform to an AI-enabled enterprise
               solution supporting sales, sourcing, legal, procurement, treasury, and contract management teams.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              {["Program Leadership", "Vendor Evaluation", "AI CLM", "Change Management"].map((item) => (
+              {["Program Leadership", "Vendor Evaluation", "AI Contract Workflows", "Change Management"].map((item) => (
                 <span key={item} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700">
                   {item}
                 </span>
@@ -166,7 +166,7 @@ export default function ClmTransformationCaseStudy() {
               <div className="rounded-lg border border-rose-200 bg-rose-50 p-5">
                 <AccentBar className="bg-rose-400" />
                 <p className="mt-5 text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">Before</p>
-                <h2 className="mt-2 text-2xl font-semibold">Legacy CLM</h2>
+                <h2 className="mt-2 text-2xl font-semibold">Legacy Contract Management</h2>
                 <p className="mt-3 leading-7 text-slate-700">
                   Low adoption, limited status visibility, high support cost, and fragile trust between business teams.
                 </p>
@@ -179,7 +179,7 @@ export default function ClmTransformationCaseStudy() {
               <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-5">
                 <AccentBar className="bg-emerald-400" />
                 <p className="mt-5 text-sm font-semibold uppercase tracking-[0.22em] text-emerald-700">After</p>
-                <h2 className="mt-2 text-2xl font-semibold">AI-Enabled CLM</h2>
+                <h2 className="mt-2 text-2xl font-semibold">AI-Enabled Contract Management</h2>
                 <p className="mt-3 leading-7 text-slate-700">
                   Global workflows, Salesforce visibility, AI-assisted contract intelligence, and internal ownership.
                 </p>
@@ -215,7 +215,7 @@ export default function ClmTransformationCaseStudy() {
               The prior implementation was live, but the business had not truly adopted it.
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              The legacy CLM platform had been active for nearly two years, but engagement remained low, especially
+              The legacy Contract Lifecycle Management platform had been active for nearly two years, but engagement remained low, especially
               within sales. Sourcing teams had only recently built confidence in the old platform after feeling
               underrepresented during the earlier rollout, so another migration carried real trust risk.
             </p>
@@ -275,7 +275,7 @@ export default function ClmTransformationCaseStudy() {
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">Platform Evaluation</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-                Four CLM platforms, one weighted selection framework.
+                Four contract management platforms, one weighted selection framework.
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-300">
                 I directed vendor evaluation using criteria tied to adoption, migration feasibility, AI maturity,
@@ -391,7 +391,7 @@ export default function ClmTransformationCaseStudy() {
             <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">Integration View</p>
               <div className="mt-6 grid gap-3 md:grid-cols-5">
-                {["Legacy contracts", "AI metadata mapping", "Malbek CLM", "Salesforce", "DocuSign"].map((node) => (
+                {["Legacy contracts", "AI metadata mapping", "Malbek contract platform", "Salesforce", "DocuSign"].map((node) => (
                   <div key={node} className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-center">
                     <p className="text-sm font-semibold leading-6">{node}</p>
                   </div>
@@ -413,7 +413,7 @@ export default function ClmTransformationCaseStudy() {
                 ))}
               </div>
               <p className="mt-5 leading-7 text-slate-600">
-                Sourcing initially compared the CLM AI experience to an external legal analysis assistant. I clarified
+                Sourcing initially compared the contract platform AI experience to an external legal analysis assistant. I clarified
                 the difference between playbook-driven workflow AI and chat-style legal analysis, then validated the
                 intended strengths through demos and vendor roadmap discussions.
               </p>
