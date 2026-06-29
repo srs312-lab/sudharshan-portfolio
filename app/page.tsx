@@ -289,7 +289,7 @@ const skillGroups: SkillGroup[] = [
 
 const heroHighlights = [
   {
-    value: "9+ years",
+    value: "12 years",
     label: "Technical program leadership",
   },
   {
@@ -489,7 +489,7 @@ export default function SudharshanPortfolio() {
                   </p>
                   <div className="mt-8 space-y-6">
                     <div>
-                      <p className="text-4xl font-semibold">9+ years</p>
+                      <p className="text-4xl font-semibold">12 years</p>
                       <p className="mt-2 text-slate-600 dark:text-slate-300">
                         Driving technical programs, automation, procurement, and enterprise systems.
                       </p>
