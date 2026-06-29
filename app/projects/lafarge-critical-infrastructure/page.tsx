@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "Lafarge Critical Infrastructure Modernization | Sudharshan Soma",
@@ -97,21 +98,24 @@ function AccentBar({ className = "" }: { className?: string }) {
 
 export default function LafargeCriticalInfrastructureCaseStudy() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-950">
-      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+    <main className="case-study min-h-screen bg-slate-50 text-slate-950 transition-colors dark:bg-slate-950 dark:text-slate-50">
+      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <Link href="/#infrastructure" className="text-sm font-semibold text-slate-600 hover:text-slate-950">
-            Back to infrastructure
+          <Link href="/#projects" className="text-sm font-semibold text-slate-600 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white">
+            Back to projects
           </Link>
-          <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
+          <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300 md:flex">
             <a href="#scope" className="hover:text-slate-950">Scope</a>
             <a href="#delivery" className="hover:text-slate-950">Delivery</a>
             <a href="#capabilities" className="hover:text-slate-950">Capabilities</a>
             <a href="#impact" className="hover:text-slate-950">Impact</a>
           </div>
-          <Button className="rounded-full" asChild>
-            <a href="mailto:soma.sudharshan.reddy@gmail.com">Contact</a>
-          </Button>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Button className="hidden rounded-full sm:inline-flex" asChild>
+              <a href="mailto:soma.sudharshan.reddy@gmail.com">Contact</a>
+            </Button>
+          </div>
         </nav>
       </header>
 

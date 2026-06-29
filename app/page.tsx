@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-provider";
 
 type IconProps = {
   name: string;
@@ -257,16 +258,6 @@ const projects: Project[] = [
     skills: ["UiPath", "Robotic Process Automation", "Supply Chain", "Operations"],
     icon: "chip",
   },
-  {
-    title: "Lafarge Critical Infrastructure Modernization",
-    category: "Electrical & Instrumentation Program Delivery",
-    summary:
-      "Program-managed power, controls, and monitoring modernization across a 24x7 industrial operation, coordinating engineering, operations, maintenance, vendors, budgets, and commissioning.",
-    impact: "Raised reliability from 95% to 98%, delivered ~$2M annual controls savings, and reduced avoidable shutdowns by 33%.",
-    skills: ["Critical Power Infrastructure", "Commissioning", "Industrial Controls & SCADA", "24x7 Operations"],
-    icon: "briefcase",
-    href: "/projects/lafarge-critical-infrastructure",
-  },
 ];
 
 const skillGroups: SkillGroup[] = [
@@ -364,7 +355,6 @@ function SectionHeading({ eyebrow, title, description }: SectionHeadingProps) {
 
 export default function SudharshanPortfolio() {
   const [isScrolled, setIsScrolled] = React.useState(false);
-  const [isDarkMode, setIsDarkMode] = React.useState(true);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -379,33 +369,8 @@ export default function SudharshanPortfolio() {
     };
   }, []);
 
-  React.useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
-      const savedTheme = window.localStorage.getItem("portfolio-theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-      setIsDarkMode(savedTheme ? savedTheme === "dark" : prefersDark);
-    });
-
-    return () => {
-      window.cancelAnimationFrame(frame);
-    };
-  }, []);
-
-  const toggleTheme = () => {
-    setIsDarkMode((current) => {
-      const next = !current;
-      window.localStorage.setItem("portfolio-theme", next ? "dark" : "light");
-      return next;
-    });
-  };
-
   return (
-    <div
-      className={`${
-        isDarkMode ? "dark bg-slate-950 text-slate-50" : "bg-slate-50 text-slate-950"
-      } min-h-screen transition-colors duration-300`}
-    >
+    <div className="min-h-screen bg-slate-50 text-slate-950 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50">
       <header
         className={`sticky top-0 z-50 border-b backdrop-blur-xl transition-all duration-300 ${
           isScrolled
@@ -436,7 +401,6 @@ export default function SudharshanPortfolio() {
           </a>
           <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300 lg:flex">
             <a href="#impact" className="hover:text-slate-950 dark:hover:text-white">Impact</a>
-            <a href="#infrastructure" className="hover:text-slate-950 dark:hover:text-white">Infrastructure</a>
             <a href="#projects" className="hover:text-slate-950 dark:hover:text-white">Projects</a>
             <a href="#skills" className="hover:text-slate-950 dark:hover:text-white">Skills</a>
             <a href="/Sudharshan_Soma.pdf" target="_blank" rel="noreferrer" className="hover:text-slate-950 dark:hover:text-white">
@@ -445,15 +409,7 @@ export default function SudharshanPortfolio() {
             <a href="#contact" className="hover:text-slate-950 dark:hover:text-white">Contact</a>
           </div>
           <div className="flex items-center gap-2">
-            <Button
-              aria-label="Toggle dark mode"
-              className="rounded-full border-slate-200 bg-white/70 text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-200 dark:hover:bg-slate-800"
-              onClick={toggleTheme}
-              type="button"
-              variant="outline"
-            >
-              {isDarkMode ? "Light" : "Dark"}
-            </Button>
+            <ThemeToggle />
             <Button className="hidden rounded-full sm:inline-flex" asChild>
               <a href="mailto:soma.sudharshan.reddy@gmail.com">
                 Contact
@@ -579,8 +535,13 @@ export default function SudharshanPortfolio() {
           </div>
         </section>
 
-        <section id="infrastructure" className="border-y border-slate-200 bg-white px-6 py-20 dark:border-slate-800 dark:bg-slate-900/40">
+        <section id="projects" className="border-y border-slate-200 bg-white px-6 py-20 dark:border-slate-800 dark:bg-slate-900/40">
           <div className="mx-auto max-w-7xl">
+            <SectionHeading
+              eyebrow="Featured Projects"
+              title="Selected transformation stories"
+              description="Each project is framed like a case study: problem, role, approach, and quantified impact."
+            />
             <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
@@ -617,13 +578,8 @@ export default function SudharshanPortfolio() {
           </div>
         </section>
 
-        <section id="projects" className="bg-white px-6 py-20 dark:bg-slate-900/40">
+        <section className="bg-white px-6 py-20 dark:bg-slate-900/40" aria-label="Featured projects">
           <div className="mx-auto max-w-7xl">
-            <SectionHeading
-              eyebrow="Featured Projects"
-              title="Selected transformation stories"
-              description="Each project is framed like a case study: problem, role, approach, and quantified impact."
-            />
             <div className="grid gap-6 lg:grid-cols-2">
               {projects.map((project, index) => (
                 <motion.div
