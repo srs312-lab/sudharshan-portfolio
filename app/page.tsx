@@ -169,8 +169,8 @@ const impactMetrics: ImpactMetric[] = [
   },
   {
     value: "$2M/year",
-    label: "Reliability modernization savings",
-    context: "Annual savings from industrial controls, condition monitoring, and reliability modernization.",
+    label: "Critical infrastructure modernization savings",
+    context: "Annual savings from analog-to-digital controls modernization in a 24x7 Lafarge operation.",
   },
 ];
 
@@ -258,13 +258,14 @@ const projects: Project[] = [
     icon: "chip",
   },
   {
-    title: "Lafarge Systems Modernization & Plant Reliability",
-    category: "Industrial Systems Transformation",
+    title: "Lafarge Critical Infrastructure Modernization",
+    category: "Electrical & Instrumentation Program Delivery",
     summary:
-      "Led technical modernization across industrial sites, coordinating planning-system migration support, SAP/Maximo data readiness, controls upgrades, and launch support.",
-    impact: "Improved reliability from 95% to 98% while driving cross-functional readiness, issue tracking, and process improvement.",
-    skills: ["Technical Program Management", "Systems Migration", "SAP/Maximo Data Readiness", "Launch Support"],
+      "Program-managed power, controls, and monitoring modernization across a 24x7 industrial operation, coordinating engineering, operations, maintenance, vendors, budgets, and commissioning.",
+    impact: "Raised reliability from 95% to 98%, delivered ~$2M annual controls savings, and reduced avoidable shutdowns by 33%.",
+    skills: ["Critical Power Infrastructure", "Commissioning", "Industrial Controls & SCADA", "24x7 Operations"],
     icon: "briefcase",
+    href: "/projects/lafarge-critical-infrastructure",
   },
 ];
 
@@ -285,6 +286,10 @@ const skillGroups: SkillGroup[] = [
     title: "Analytics",
     skills: ["SQL", "Python", "Power BI", "Tableau", "Predictive Modeling"],
   },
+  {
+    title: "Critical Infrastructure",
+    skills: ["High-Voltage Power Systems", "Industrial Controls & SCADA", "Commissioning & Handover", "24x7 Operations", "Predictive Maintenance"],
+  },
 ];
 
 const heroHighlights = [
@@ -299,6 +304,33 @@ const heroHighlights = [
   {
     value: "250+",
     label: "Delivery blockers resolved across planning workstreams",
+  },
+];
+
+const infrastructureCapabilities = [
+  {
+    title: "Critical power",
+    detail: "132kV substations, relay coordination, power quality, harmonic mitigation, and power-factor improvement.",
+  },
+  {
+    title: "Controls & monitoring",
+    detail: "Industrial control and SCADA modernization, energy-management integration, telemetry, and operational visibility.",
+  },
+  {
+    title: "Commissioning",
+    detail: "End-to-end upgrade delivery, shutdown coordination, validation, operational handover, and launch support.",
+  },
+  {
+    title: "Reliability engineering",
+    detail: "Predictive condition monitoring, incident prevention, maintenance coordination, and reliability improvement.",
+  },
+  {
+    title: "Program controls",
+    detail: "Business cases, budgets, schedules, risks, vendors, dependencies, executive updates, and issue resolution.",
+  },
+  {
+    title: "24x7 operations",
+    detail: "Delivery in uptime-sensitive environments where safe change windows and business continuity were essential.",
   },
 ];
 
@@ -404,6 +436,7 @@ export default function SudharshanPortfolio() {
           </a>
           <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300 lg:flex">
             <a href="#impact" className="hover:text-slate-950 dark:hover:text-white">Impact</a>
+            <a href="#infrastructure" className="hover:text-slate-950 dark:hover:text-white">Infrastructure</a>
             <a href="#projects" className="hover:text-slate-950 dark:hover:text-white">Projects</a>
             <a href="#skills" className="hover:text-slate-950 dark:hover:text-white">Skills</a>
             <a href="/Sudharshan_Soma.pdf" target="_blank" rel="noreferrer" className="hover:text-slate-950 dark:hover:text-white">
@@ -449,13 +482,13 @@ export default function SudharshanPortfolio() {
               transition={{ duration: 0.6 }}
             >
               <p className="mb-5 inline-flex rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
-                Technical Program Manager · Agentic AI · Enterprise Systems · Workflow Automation
+                Technical Program Manager · Enterprise Systems · Automation · Infrastructure Delivery
               </p>
               <h1 className="max-w-4xl text-5xl font-semibold tracking-tight text-slate-950 dark:text-white md:text-7xl">
                 I lead complex transformation programs, turning ambiguous problems into measurable enterprise impact.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300 md:text-xl">
-                I specialize in agentic AI implementation, workflow automation, procurement transformation, enterprise system modernization, and cross-functional program recovery.
+                I lead enterprise systems, automation, supply chain, and critical-infrastructure programs, including power, controls, commissioning, reliability, and 24x7 operational delivery.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button size="lg" className="rounded-full" asChild>
@@ -491,7 +524,7 @@ export default function SudharshanPortfolio() {
                     <div>
                       <p className="text-4xl font-semibold">12 years</p>
                       <p className="mt-2 text-slate-600 dark:text-slate-300">
-                        Driving technical programs, automation, procurement, and enterprise systems.
+                        Driving technical programs across automation, supply chain, enterprise systems, and critical infrastructure.
                       </p>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
@@ -507,7 +540,7 @@ export default function SudharshanPortfolio() {
                     <div className="rounded-2xl border border-slate-200 p-5 dark:border-slate-700">
                       <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Current focus</p>
                       <p className="mt-2 text-lg font-semibold">
-                        Agentic AI implementation, workflow automation, and enterprise transformation programs.
+                        Enterprise transformation, agentic AI, workflow automation, and infrastructure program delivery.
                       </p>
                     </div>
                   </div>
@@ -542,6 +575,44 @@ export default function SudharshanPortfolio() {
                   </Card>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="infrastructure" className="border-y border-slate-200 bg-white px-6 py-20 dark:border-slate-800 dark:bg-slate-900/40">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
+                  Critical Infrastructure Experience
+                </p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 dark:text-white md:text-4xl">
+                  Infrastructure delivery in uptime-sensitive 24x7 operations.
+                </h2>
+                <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
+                  At Lafarge, I led programs spanning high-voltage power systems, controls and monitoring,
+                  commissioning, vendor coordination, safe change windows, incident prevention, predictive maintenance,
+                  and operational handover.
+                </p>
+                <Button className="mt-7 rounded-full" asChild>
+                  <a href="/projects/lafarge-critical-infrastructure">
+                    Read infrastructure case study
+                    <Icon name="arrow" className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {infrastructureCapabilities.map((capability) => (
+                  <div
+                    key={capability.title}
+                    className="rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900"
+                  >
+                    <h3 className="text-lg font-semibold text-slate-950 dark:text-white">{capability.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{capability.detail}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -631,7 +702,7 @@ export default function SudharshanPortfolio() {
               title="The capabilities behind the outcomes"
               description="A mix of technical fluency, program execution, business process understanding, and executive communication."
             />
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
               {skillGroups.map((group) => (
                 <Card key={group.title} className="rounded-3xl border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
                   <CardContent className="p-6">
