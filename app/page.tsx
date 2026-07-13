@@ -52,6 +52,14 @@ function Icon({ name, className = "h-6 w-6" }: IconProps) {
         <path d="M1 14h3" />
       </svg>
     ),
+    card: (
+      <svg {...commonProps}>
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="M3 10h18" />
+        <path d="M7 15h4" />
+        <path d="M15 15h2" />
+      </svg>
+    ),
     gauge: (
       <svg {...commonProps}>
         <path d="M12 14l4-4" />
@@ -159,6 +167,11 @@ const impactMetrics: ImpactMetric[] = [
     context: "Procure-to-Pay transformation shortened vendor onboarding from request to readiness.",
   },
   {
+    value: "5 markets",
+    label: "Travel and expense support footprint",
+    context: "Corporate T&E launch expanded from North America to Brazil, India, Spain, and Australia.",
+  },
+  {
     value: "6 roles",
     label: "Annual manual effort avoided",
     context: "Proof of Delivery automation removed follow-up work equivalent to six full-time roles.",
@@ -200,6 +213,17 @@ const projects: Project[] = [
         label: "GitHub",
       },
     ],
+  },
+  {
+    title: "Corporate Travel & Expense Transformation",
+    category: "Enterprise Operating Model",
+    summary:
+      "Led implementation of an independent travel, expense, card, and duty-of-care operating model after a company separation, spanning platform rollout and support operations.",
+    impact:
+      "Launched North America in January 2025, expanded support across Brazil, India, Spain, and Australia, and now manage the global T&E support team.",
+    skills: ["Technical Program Management", "Travel & Expense", "Coupa", "Egencia", "Support Operations"],
+    icon: "card",
+    href: "/projects/corporate-travel-expense",
   },
   {
     title: "ProCo Tax Transformation",
