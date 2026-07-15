@@ -215,17 +215,6 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "Corporate Travel & Expense Transformation",
-    category: "Enterprise Operating Model",
-    summary:
-      "Led implementation of an independent travel, expense, card, and duty-of-care operating model after a company separation, spanning platform rollout and support operations.",
-    impact:
-      "Launched North America in January 2025, expanded support across Brazil, India, Spain, and Australia, and now manage the global T&E support team.",
-    skills: ["Technical Program Management", "Travel & Expense", "Coupa", "Egencia", "Support Operations"],
-    icon: "card",
-    href: "/projects/corporate-travel-expense",
-  },
-  {
     title: "ProCo Tax Transformation",
     category: "Enterprise Tax Automation",
     summary:
@@ -254,6 +243,17 @@ const projects: Project[] = [
     skills: ["Program Recovery", "Anaplan", "Governance", "Supply Chain Planning"],
     icon: "gauge",
     href: "/projects/anaplan-recovery",
+  },
+  {
+    title: "Corporate Travel & Expense Transformation",
+    category: "Enterprise Operating Model",
+    summary:
+      "Led implementation of an independent travel, expense, card, and duty-of-care operating model after a company separation, spanning platform rollout and support operations.",
+    impact:
+      "Launched North America in January 2025, expanded support across Brazil, India, Spain, and Australia, and now manage the global T&E support team.",
+    skills: ["Technical Program Management", "Travel & Expense", "Coupa", "Egencia", "Support Operations"],
+    icon: "card",
+    href: "/projects/corporate-travel-expense",
   },
   {
     title: "Procure-to-Pay Transformation",
