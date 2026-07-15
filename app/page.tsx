@@ -295,7 +295,20 @@ const skillGroups: SkillGroup[] = [
   },
   {
     title: "Enterprise Systems",
-    skills: ["Contract Lifecycle Management", "Anaplan", "Procure-to-Pay", "Procurement Systems", "System Modernization"],
+    skills: [
+      "Contract Lifecycle Management",
+      "Anaplan",
+      "Procure-to-Pay",
+      "Travel & Expense",
+      "Corporate Card Programs",
+      "Coupa Expense",
+      "Egencia / Amex GBT",
+      "Brex",
+      "International SOS",
+      "NetSuite",
+      "Okta SSO",
+      "HRIS Integrations",
+    ],
   },
   {
     title: "Analytics",
