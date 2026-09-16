@@ -47,7 +47,7 @@ const infrastructureSystems = [
   },
   {
     title: "Operational reliability",
-    body: "Incident prevention, maintenance coordination, safe change windows, commissioning, validation, and 24x7 business continuity.",
+    body: "Incident prevention, maintenance coordination, safe change windows, commissioning, validation, and 24×7 business continuity.",
   },
 ];
 
@@ -71,7 +71,7 @@ const deliveryPhases = [
 ];
 
 const programCapabilities = [
-  ["24x7 industrial operations", "Uptime-sensitive facilities, controlled change windows, escalation discipline, and continuity planning"],
+  ["24×7 industrial operations", "Uptime-sensitive facilities, controlled change windows, escalation discipline, and continuity planning"],
   ["132 kV substations and power quality", "Critical electrical distribution, protection coordination, capacity awareness, and power-quality risk"],
   ["Industrial controls and SCADA", "Transferable controls, telemetry, alarming, monitoring, and infrastructure-operations visibility"],
   ["Commissioning and cutover", "Contractor coordination, test plans, acceptance criteria, punch-list closure, and operational handover"],
@@ -128,7 +128,7 @@ export default function LafargeCriticalInfrastructureCaseStudy() {
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
               Program-managed electrical, instrumentation, controls, and high-voltage infrastructure upgrades across a
-              24x7 industrial operation, coordinating engineering, operations, maintenance, vendors, budgets, and
+              24×7 industrial operation, coordinating engineering, operations, maintenance, vendors, budgets, and
               commissioning.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -137,7 +137,7 @@ export default function LafargeCriticalInfrastructureCaseStudy() {
                 "Critical Power",
                 "Controls & SCADA",
                 "Commissioning",
-                "24x7 Operations",
+                "24×7 Operations",
               ].map((item) => (
                 <span key={item} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700">
                   {item}
@@ -271,7 +271,7 @@ export default function LafargeCriticalInfrastructureCaseStudy() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-700">Infrastructure Delivery Foundation</p>
             <p className="mt-4 max-w-5xl text-xl font-semibold leading-9">
               I bring infrastructure program experience grounded in power, controls, commissioning, reliability, and
-              24x7 operations, supported by vendor leadership, program controls, and operational discipline.
+              24×7 operations, supported by vendor leadership, program controls, and operational discipline.
             </p>
           </div>
 

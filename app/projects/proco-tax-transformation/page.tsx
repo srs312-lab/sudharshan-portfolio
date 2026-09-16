@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const headlineMetrics = [
   {
-    value: "$6M-$8M",
+    value: "$6M–$8M",
     label: "Estimated annual savings opportunity",
     tone: "border-emerald-200 bg-emerald-50 text-emerald-700",
   },
@@ -121,7 +121,7 @@ const implementationFlow = [
 ];
 
 const outcomes = [
-  ["Financial value", "Positioned the organization to capture an estimated $6M-$8M in savings through the UAE procurement entity model"],
+  ["Financial value", "Positioned the organization to capture an estimated $6M–$8M in savings through the UAE procurement entity model"],
   ["Deadline delivery", "Delivered a complex tax transformation under an aggressive 90-day timeline"],
   ["Business continuity", "Protected ongoing workstreams through a controlled April 1 cutover model"],
   ["Global alignment", "Aligned finance, tax, sales, logistics, planning, procurement, and P&L stakeholders around new intercompany flows"],
@@ -177,7 +177,7 @@ export default function ProcoTaxTransformationCaseStudy() {
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
               Led a highly visible enterprise tax transformation tied to financial year-end deadlines, with a strict
-              April 1 go-live requirement, a new UAE procurement entity operating model, and an estimated $6M-$8M
+              April 1 go-live requirement, a new UAE procurement entity operating model, and an estimated $6M–$8M
               savings opportunity.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">

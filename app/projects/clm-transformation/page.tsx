@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 
 const headlineMetrics = [
   {
-    value: "8 weeks",
+    value: "2 weeks",
     label: "Legacy contract turnaround",
     tone: "border-rose-200 bg-rose-50 text-rose-700",
   },
   {
-    value: "1-2 weeks",
+    value: "4 days",
     label: "New contract turnaround",
     tone: "border-emerald-200 bg-emerald-50 text-emerald-700",
   },
@@ -41,7 +41,7 @@ const scopeStats = [
 
 const legacyProblems = [
   "Very low sales adoption despite nearly 2 years of implementation",
-  "Only 2-3 sales contracts executed through the legacy platform",
+  "Only 2–3 sales contracts executed through the legacy platform",
   "Expensive licensing and ongoing vendor support costs",
   "Limited visibility into contract lifecycle stages",
   "Sourcing stakeholders felt underrepresented during the earlier rollout",
@@ -98,7 +98,7 @@ const aiCapabilities = [
 ];
 
 const outcomes = [
-  ["Turnaround time", "Reduced from 8 weeks to 1-2 weeks"],
+  ["Turnaround time", "Reduced from 2 weeks to 4 days"],
   ["Visibility", "Improved contract tracking directly within Salesforce"],
   ["Adoption", "Increased cross-functional engagement"],
   ["Vendor dependency", "Reduced through internal enablement"],
