@@ -120,7 +120,7 @@ type Project = {
   title: string;
   category: string;
   summary: string;
-  impact: string;
+  impact: string | string[];
   skills: string[];
   icon: string;
   href?: string;
@@ -147,17 +147,12 @@ type SectionHeadingProps = {
 
 const impactMetrics: ImpactMetric[] = [
   {
-    value: "$6M-$8M",
-    label: "Estimated enterprise savings",
-    context: "Target from UAE procurement entity and intercompany tax transformation aligned to an April 1 launch.",
-  },
-  {
-    value: "8 weeks → 1-2 weeks",
+    value: "2 weeks → 4 days",
     label: "Contract turnaround reduction",
     context: "Baseline from legacy Contract Lifecycle Management process; outcome after global AI-enabled rollout.",
   },
   {
-    value: "-30 → +7",
+    value: "−30 → +7",
     label: "Planning-platform satisfaction improvement",
     context: "Net Promoter Score improved during a six-month Anaplan recovery program.",
   },
@@ -167,31 +162,16 @@ const impactMetrics: ImpactMetric[] = [
     context: "Procure-to-Pay transformation shortened vendor onboarding from request to readiness.",
   },
   {
-    value: "5 markets",
-    label: "Travel and expense support footprint",
-    context: "Corporate T&E launch expanded from North America to Brazil, India, Spain, and Australia.",
-  },
-  {
-    value: "6 roles",
-    label: "Annual manual effort avoided",
-    context: "Proof of Delivery automation removed follow-up work equivalent to six full-time roles.",
-  },
-  {
-    value: "260 hours/month",
-    label: "Supply chain automation capacity saved",
-    context: "Robotic process automation reduced repetitive planning, logistics, and procurement effort.",
-  },
-  {
     value: "$2M/year",
     label: "Critical infrastructure modernization savings",
-    context: "Annual savings from analog-to-digital controls modernization in a 24x7 Lafarge operation.",
+    context: "Annual savings from analog-to-digital controls modernization in a 24×7 Lafarge operation.",
   },
 ];
 
 const projects: Project[] = [
   {
     title: "ParkReserve AI",
-    category: "Agentic AI Product",
+    category: "Personal Project · Agentic AI",
     summary:
       "Built a full-stack national park reservation monitor that searches Recreation.gov campgrounds, schedules watches, and sends email or text-message alerts when openings appear.",
     impact:
@@ -219,8 +199,8 @@ const projects: Project[] = [
     category: "Enterprise Tax Automation",
     summary:
       "Led a deadline-sensitive tax transformation to establish a UAE procurement entity and redesign intercompany flows across multiple enterprise platforms.",
-    impact: "Positioned the organization to capture an estimated $6M-$8M in savings through a phased April 1 rollout.",
-    skills: ["Technical Program Management", "Tax Transformation", "Intercompany Flows", "Executive Alignment"],
+    impact: "Positioned the organization to capture an estimated $6M–$8M in savings through a phased April 1 rollout.",
+    skills: ["Tax Transformation", "Intercompany Flows", "Executive Alignment"],
     icon: "briefcase",
     href: "/projects/proco-tax-transformation",
   },
@@ -229,8 +209,8 @@ const projects: Project[] = [
     category: "AI + Enterprise Systems",
     summary:
       "Led migration from a legacy Contract Lifecycle Management platform to an AI-enabled enterprise solution across sales, sourcing, legal, procurement, and treasury teams.",
-    impact: "Reduced contract turnaround from 8 weeks to 1-2 weeks while migrating 1,500+ contracts.",
-    skills: ["Technical Program Management", "Contract Lifecycle Management", "Vendor Evaluation", "Change Management"],
+    impact: "Reduced contract turnaround from 2 weeks to 4 days while migrating 1,500+ contracts.",
+    skills: ["Contract Lifecycle Management", "Vendor Evaluation", "Change Management"],
     icon: "sparkle",
     href: "/projects/clm-transformation",
   },
@@ -239,7 +219,7 @@ const projects: Project[] = [
     category: "Program Recovery",
     summary:
       "Stabilized a business-critical Anaplan planning platform through governance, delivery-blocker resolution, sprint execution, and performance optimization.",
-    impact: "Resolved delivery blockers across 250+ planning-system issues, improved Net Promoter Score from -30 to +7 in six months, and delivered 4 strategic initiatives.",
+    impact: "Resolved delivery blockers across 250+ planning-system issues, improved Net Promoter Score from −30 to +7 in six months, and delivered 4 strategic initiatives.",
     skills: ["Program Recovery", "Anaplan", "Governance", "Supply Chain Planning"],
     icon: "gauge",
     href: "/projects/anaplan-recovery",
@@ -251,36 +231,22 @@ const projects: Project[] = [
       "Led implementation of an independent travel, expense, card, and duty-of-care operating model after a company separation, spanning platform rollout and support operations.",
     impact:
       "Launched North America in January 2025, expanded support across Brazil, India, Spain, and Australia, and now manage the global T&E support team.",
-    skills: ["Technical Program Management", "Travel & Expense", "Coupa", "Egencia", "Support Operations"],
+    skills: ["Travel & Expense", "Coupa", "Egencia", "Support Operations"],
     icon: "card",
     href: "/projects/corporate-travel-expense",
   },
   {
-    title: "Procure-to-Pay Transformation",
-    category: "Procurement Transformation",
-    summary:
-      "Implemented a new Procure-to-Pay system to improve invoice automation, supplier onboarding, and procurement operating efficiency.",
-    impact: "Reached 80% invoice scan rate and reduced onboarding from 47 to 13 days.",
-    skills: ["Procure-to-Pay", "Procurement", "Process Improvement"],
-    icon: "workflow",
-  },
-  {
-    title: "Proof of Delivery Automation",
+    title: "Procurement & Supply Chain Automation",
     category: "Automation at Scale",
     summary:
-      "Automated Proof of Delivery workflows using Power Automate to improve customer visibility and reduce manual follow-up effort.",
-    impact: "Saved annual effort equivalent to 6 full-time roles.",
-    skills: ["Power Automate", "Workflow Automation", "Customer Visibility"],
-    icon: "rocket",
-  },
-  {
-    title: "Supply Chain Robotic Process Automation",
-    category: "Robotic Process Automation + Operations",
-    summary:
-      "Delivered robotic process automation bots across planning, logistics, and procurement workflows to reduce manual errors and increase operational speed.",
-    impact: "Saved 260 employee hours per month.",
-    skills: ["UiPath", "Robotic Process Automation", "Supply Chain", "Operations"],
-    icon: "chip",
+      "Implemented a new Procure-to-Pay system, automated Proof of Delivery workflows with Power Automate, and delivered UiPath bots across planning, logistics, and procurement workflows.",
+    impact: [
+      "80% invoice scan rate and vendor onboarding cut from 47 to 13 days",
+      "Proof of Delivery automation saved annual effort equivalent to 6 full-time roles",
+      "RPA saved 260 employee hours per month",
+    ],
+    skills: ["Procure-to-Pay", "Power Automate", "UiPath", "Supply Chain"],
+    icon: "workflow",
   },
 ];
 
@@ -316,22 +282,7 @@ const skillGroups: SkillGroup[] = [
   },
   {
     title: "Critical Infrastructure",
-    skills: ["High-Voltage Power Systems", "Industrial Controls & SCADA", "Commissioning & Handover", "24x7 Operations", "Predictive Maintenance"],
-  },
-];
-
-const heroHighlights = [
-  {
-    value: "12 years",
-    label: "Technical program leadership",
-  },
-  {
-    value: "8+",
-    label: "AI/workflow automation use cases delivered",
-  },
-  {
-    value: "250+",
-    label: "Delivery blockers resolved across planning workstreams",
+    skills: ["High-Voltage Power Systems", "Industrial Controls & SCADA", "Commissioning & Handover", "24×7 Operations", "Predictive Maintenance"],
   },
 ];
 
@@ -357,7 +308,7 @@ const infrastructureCapabilities = [
     detail: "Business cases, budgets, schedules, risks, vendors, dependencies, executive updates, and issue resolution.",
   },
   {
-    title: "24x7 operations",
+    title: "24×7 operations",
     detail: "Delivery in uptime-sensitive environments where safe change windows and business continuity were essential.",
   },
 ];
@@ -460,14 +411,6 @@ export default function SudharshanPortfolio() {
       <main>
         <section id="home" className="relative overflow-hidden px-6 pb-20 pt-8 md:pb-28 md:pt-12">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(15,23,42,0.12),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(71,85,105,0.14),_transparent_30%)] dark:bg-[radial-gradient(circle_at_top_left,_rgba(14,165,233,0.18),_transparent_34%),radial-gradient(circle_at_bottom_right,_rgba(16,185,129,0.14),_transparent_30%)]" />
-          <div className="mx-auto mb-10 grid max-w-7xl gap-3 rounded-lg border border-slate-200 bg-white/80 p-3 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 md:grid-cols-3">
-            {heroHighlights.map((highlight) => (
-              <div key={highlight.value} className="rounded-lg bg-slate-50 px-4 py-3 dark:bg-slate-800/70">
-                <p className="text-lg font-semibold tracking-tight text-slate-950 dark:text-white">{highlight.value}</p>
-                <p className="mt-1 text-sm leading-5 text-slate-600 dark:text-slate-300">{highlight.label}</p>
-              </div>
-            ))}
-          </div>
           <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
@@ -481,7 +424,7 @@ export default function SudharshanPortfolio() {
                 I lead complex transformation programs, turning ambiguous problems into measurable enterprise impact.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300 md:text-xl">
-                I lead enterprise systems, automation, supply chain, and critical-infrastructure programs, including power, controls, commissioning, reliability, and 24x7 operational delivery.
+                My programs span enterprise systems, automation, supply chain, and critical infrastructure, including power, controls, commissioning, reliability, and 24×7 operational delivery.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button size="lg" className="rounded-full" asChild>
@@ -515,7 +458,7 @@ export default function SudharshanPortfolio() {
                   </p>
                   <div className="mt-8 space-y-6">
                     <div>
-                      <p className="text-4xl font-semibold">12 years</p>
+                      <p className="text-4xl font-semibold">11+ years</p>
                       <p className="mt-2 text-slate-600 dark:text-slate-300">
                         Driving technical programs across automation, supply chain, enterprise systems, and critical infrastructure.
                       </p>
@@ -526,8 +469,8 @@ export default function SudharshanPortfolio() {
                         <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">AI/workflow automation use cases delivered</p>
                       </div>
                       <div className="rounded-2xl bg-slate-100 p-5 dark:bg-slate-800">
-                        <p className="text-2xl font-semibold">250+</p>
-                        <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">Delivery blockers resolved</p>
+                        <p className="text-2xl font-semibold">$6M–$8M</p>
+                        <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">Estimated savings, intercompany tax transformation</p>
                       </div>
                     </div>
                     <div className="rounded-2xl border border-slate-200 p-5 dark:border-slate-700">
@@ -548,7 +491,6 @@ export default function SudharshanPortfolio() {
             <SectionHeading
               eyebrow="Impact Dashboard"
               title="A portfolio built around outcomes, not just responsibilities."
-              description="The strongest stories combine technical execution, stakeholder alignment, and measurable business value."
             />
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {impactMetrics.map((metric, index) => (
@@ -577,46 +519,7 @@ export default function SudharshanPortfolio() {
             <SectionHeading
               eyebrow="Featured Projects"
               title="Selected transformation stories"
-              description="Each project is framed like a case study: problem, role, approach, and quantified impact."
             />
-            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
-                  Critical Infrastructure Experience
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 dark:text-white md:text-4xl">
-                  Infrastructure delivery in uptime-sensitive 24x7 operations.
-                </h2>
-                <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
-                  At Lafarge, I led programs spanning high-voltage power systems, controls and monitoring,
-                  commissioning, vendor coordination, safe change windows, incident prevention, predictive maintenance,
-                  and operational handover.
-                </p>
-                <Button className="mt-7 rounded-full" asChild>
-                  <a href="/projects/lafarge-critical-infrastructure">
-                    Read infrastructure case study
-                    <Icon name="arrow" className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {infrastructureCapabilities.map((capability) => (
-                  <div
-                    key={capability.title}
-                    className="rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900"
-                  >
-                    <h3 className="text-lg font-semibold text-slate-950 dark:text-white">{capability.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{capability.detail}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-white px-6 py-20 dark:bg-slate-900/40" aria-label="Featured projects">
-          <div className="mx-auto max-w-7xl">
             <div className="grid gap-6 lg:grid-cols-2">
               {projects.map((project, index) => (
                 <motion.div
@@ -651,7 +554,13 @@ export default function SudharshanPortfolio() {
                       <p className="mt-4 leading-7 text-slate-600 dark:text-slate-300">{project.summary}</p>
                       <div className="mt-5 rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-800">
                         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Impact</p>
-                        <p className="mt-2 font-semibold text-slate-950 dark:text-white">{project.impact}</p>
+                        {Array.isArray(project.impact) ? (
+                          project.impact.map((line) => (
+                            <p key={line} className="mt-2 font-semibold text-slate-950 dark:text-white">{line}</p>
+                          ))
+                        ) : (
+                          <p className="mt-2 font-semibold text-slate-950 dark:text-white">{project.impact}</p>
+                        )}
                       </div>
                       <div className="mt-5 flex flex-wrap gap-2">
                         {project.skills.map((skill) => (
@@ -684,6 +593,44 @@ export default function SudharshanPortfolio() {
                   </Card>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white px-6 py-20 dark:bg-slate-900/40" aria-label="Critical infrastructure experience">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
+                  Critical Infrastructure Experience
+                </p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 dark:text-white md:text-4xl">
+                  Infrastructure delivery in uptime-sensitive 24×7 operations.
+                </h2>
+                <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
+                  At Lafarge, I led programs spanning high-voltage power systems, controls and monitoring,
+                  commissioning, vendor coordination, safe change windows, incident prevention, predictive maintenance,
+                  and operational handover.
+                </p>
+                <Button className="mt-7 rounded-full" asChild>
+                  <a href="/projects/lafarge-critical-infrastructure">
+                    Read infrastructure case study
+                    <Icon name="arrow" className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {infrastructureCapabilities.map((capability) => (
+                  <div
+                    key={capability.title}
+                    className="rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900"
+                  >
+                    <h3 className="text-lg font-semibold text-slate-950 dark:text-white">{capability.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{capability.detail}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -736,9 +683,20 @@ export default function SudharshanPortfolio() {
                 className="rounded-full border-white/30 bg-transparent text-white hover:bg-white hover:text-slate-950"
                 asChild
               >
-                <a href="https://www.linkedin.com/in/sudarshan-soma/" target="_blank" rel="noreferrer">
+                <a href="https://www.linkedin.com/in/sudharshan-soma/" target="_blank" rel="noreferrer">
                   LinkedIn
                   <Icon name="linkedin" className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full border-white/30 bg-transparent text-white hover:bg-white hover:text-slate-950"
+                asChild
+              >
+                <a href="https://github.com/srs312-lab" target="_blank" rel="noreferrer">
+                  GitHub
+                  <Icon name="arrow" className="ml-2 h-4 w-4" />
                 </a>
               </Button>
             </div>

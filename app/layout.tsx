@@ -18,8 +18,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sudharshan Soma Portfolio",
-  description: "Portfolio website",
+  metadataBase: new URL("https://sudharshan-soma.vercel.app"),
+  title: "Sudharshan Soma | Technical Program Manager",
+  description: "Technical Program Manager leading enterprise systems, AI and workflow automation, supply chain, and critical-infrastructure programs with measurable business outcomes.",
+  openGraph: {
+    title: "Sudharshan Soma | Technical Program Manager",
+    description: "Technical Program Manager leading enterprise systems, AI and workflow automation, supply chain, and critical-infrastructure programs with measurable business outcomes.",
+    url: "https://sudharshan-soma.vercel.app",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Sudharshan Soma | Technical Program Manager" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sudharshan Soma | Technical Program Manager",
+    description: "Technical Program Manager leading enterprise systems, AI and workflow automation, supply chain, and critical-infrastructure programs with measurable business outcomes.",
+    images: [{ url: "/opengraph-image", alt: "Sudharshan Soma | Technical Program Manager" }],
+  },
+  other: {
+    "twitter:url": "https://sudharshan-soma.vercel.app",
+  },
 };
 
 const themeScript = `

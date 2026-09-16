@@ -26,7 +26,7 @@ const headlineMetrics = [
     tone: "border-amber-200 bg-amber-50 text-amber-700",
   },
   {
-    value: "-30 to +7",
+    value: "−30 to +7",
     label: "User satisfaction NPS improvement in six months",
     tone: "border-violet-200 bg-violet-50 text-violet-700",
   },
@@ -95,7 +95,7 @@ const prioritizationSignals = [
 const impactResults = [
   ["Backlog recovery", "Resolved approximately 250 platform issues"],
   ["Delivery execution", "Moved from reactive firefighting to sprint-based planning"],
-  ["User confidence", "Improved user satisfaction NPS from -30 to +7 in six months"],
+  ["User confidence", "Improved user satisfaction NPS from −30 to +7 in six months"],
   ["Performance", "Reduced disruption from recurring model-busy integration conflicts"],
   ["Collaboration", "Improved alignment across internal teams, vendors, and business users"],
   ["Strategic delivery", "Delivered 4 high-priority supply chain initiatives during recovery"],
